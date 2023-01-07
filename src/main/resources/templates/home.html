@@ -5,11 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" th:href="@{/css/main.css}">
   <title>Home</title>
 </head>
 
 <body>
-  <h1 th:text="${message}"></h1>
+  <main class="container">
+    <nav>
+      <h1>Scribbles</h1>
+      <ul>
+        <li><a href="#" role="button">Scribble now!</a></li>
+      </ul>
+    </nav>
+    <h2>Latest posts</h2>
+    <article>
+      <h3><a href="" class="contrast">Article 1</a></h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
+        assumenda a odio minus velit tenetur?
+      </p>
+    </article>
+    <article>
+      <h3>Article 2</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
+        assumenda a odio minus velit tenetur?
+      </p>
+    </article>
+    <article>
+      <h3>Article 3</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
+        assumenda a odio minus velit tenetur?
+      </p>
+    </article>
+  </main>
+
 </body>
 
 </html>

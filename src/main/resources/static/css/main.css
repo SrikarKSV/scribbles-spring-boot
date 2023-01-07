@@ -1,0 +1,12 @@
+article {
+  --block-spacing-vertical: 1.5rem;
+}
+
+nav {
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+nav h1 {
+  margin: 0;
+}
