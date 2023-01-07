@@ -8,6 +8,8 @@
 <body>
   <section>
     <h2>Latest posts</h2>
+    <small th:if="${message}" class="flash-message" th:text="${message}"></small>
+    <h3 if:unless="${scribbles}">No posts!</h3>
     <article th:each="scribble: ${scribbles}">
       <h3><a th:href="@{/{id}(id=${scribble.id})}" th:text="${scribble.title}"></a></h3>
       <p th:text="${scribble.body}"></p>

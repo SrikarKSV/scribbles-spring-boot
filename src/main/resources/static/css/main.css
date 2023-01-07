@@ -1,3 +1,7 @@
+:root:not([data-theme='light']) {
+  --primary: #00897b;
+}
+
 article {
   --block-spacing-vertical: 1.6rem;
 }
@@ -24,4 +28,9 @@ nav h1 {
 .flash-error {
   color: #eb2f64;
   font-size: 0.8rem;
+}
+
+.secondary {
+  display: inline-block;
+  margin-bottom: 20px;
 }
