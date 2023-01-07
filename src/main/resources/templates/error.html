@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout::layout(~{::title}, ~{::section})}">
+
+<head>
+  <title th:text="${title}"></title>
+</head>
+
+<body>
+  <section>
+    <h2>Scribble not found!</h2>
+    <a th:href="@{/}">Go back home</a>
+  </section>
+</body>
+
+</html>

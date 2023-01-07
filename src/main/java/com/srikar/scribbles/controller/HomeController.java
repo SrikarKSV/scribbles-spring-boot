@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.srikar.scribbles.entity.Scribble;
+import com.srikar.scribbles.exception.ScribbleNotFoundException;
 import com.srikar.scribbles.service.ScribbleService;
 
 import jakarta.validation.Valid;
@@ -30,7 +31,7 @@ public class HomeController {
     }
 
     @GetMapping("/{id}")
-    public String getPost(@PathVariable Long id, Model model) {
+    public String getPost(@PathVariable Long id, Model model) throws ScribbleNotFoundException {
         Scribble scribble = scribbleService.getScribbleById(id);
         model.addAttribute("scribble", scribble);
         return "post";
