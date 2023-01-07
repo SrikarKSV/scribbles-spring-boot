@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout::layout(~{::title}, ~{::section})}">
+
+<head>
+  <title>Scribble | Add scribbles</title>
+</head>
+
+<body>
+  <section>
+    <form action="#" th:action="@{/scribble}" th:object="${scribble}" method="post">
+      <h2>Add scribbles!</h2>
+      <label for="title">Title</label>
+      <small th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></small>
+      <input type="text" th:field="*{title}">
+
+      <label for="body">Body</label>
+      <small th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></small>
+      <textarea rows="5" th:field="*{body}"></textarea>
+
+      <button type="submit">Add</button>
+    </form>
+  </section>
+</body>
+
+</html>
