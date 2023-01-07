@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout::layout(~{::title}, ~{::section})}">
+
+<head>
+  <title th:replace="${title}"></title>
+</head>
+
+<body>
+  <section>
+    <h2 th:replace="${title}"></h2>
+    <p th:replace="${body}"></p>
+  </section>
+</body>
+
+</html>
