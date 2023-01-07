@@ -1,5 +1,7 @@
 package com.srikar.scribbles.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,9 @@ public class HomeController {
     private ScribbleService scribbleService;
 
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
+        List<Scribble> scribbles = scribbleService.getScribbles();
+        model.addAttribute("scribbles", scribbles);
         return "home";
     }
 

@@ -8,26 +8,9 @@
 <body>
   <section>
     <h2>Latest posts</h2>
-    <article>
-      <h3><a href="" class="contrast">Article 1</a></h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
-        assumenda a odio minus velit tenetur?
-      </p>
-    </article>
-    <article>
-      <h3>Article 2</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
-        assumenda a odio minus velit tenetur?
-      </p>
-    </article>
-    <article>
-      <h3>Article 3</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui facilis aperiam pariatur, maiores
-        assumenda a odio minus velit tenetur?
-      </p>
+    <article th:each="scribble: ${scribbles}">
+      <h3><a th:href="@{/{id}(id=${scribble.id})}" th:text="${scribble.title}"></a></h3>
+      <p th:text="${scribble.body}"></p>
     </article>
   </section>
 </body>
