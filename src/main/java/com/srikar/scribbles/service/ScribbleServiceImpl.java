@@ -29,4 +29,9 @@ public class ScribbleServiceImpl implements ScribbleService {
         return scribbleRepository.findAll();
     }
 
+    @Override
+    public void deletePost(Long id) {
+        scribbleRepository.deleteById(id);
+    }
+
 }

@@ -12,4 +12,6 @@ public interface ScribbleService {
 
     List<Scribble> getScribbles();
 
+    void deletePost(Long id);
+
 }

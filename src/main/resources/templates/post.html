@@ -9,6 +9,7 @@
   <section>
     <h2 th:text="${scribble.title}"></h2>
     <small th:if="${message}" class="flash-message" th:text="${message}"></small>
+    <a role="button" class="secondary outline" th:href="@{/delete/{id}(id=${scribble.id})}">Delete scribble</a>
     <p th:text="${scribble.body}"></p>
   </section>
 </body>

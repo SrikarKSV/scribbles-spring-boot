@@ -29,16 +29,16 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/scribble")
-    public String getScribble(Scribble scribble) {
-        return "form";
-    }
-
     @GetMapping("/{id}")
     public String getPost(@PathVariable Long id, Model model) {
         Scribble scribble = scribbleService.getScribbleById(id);
         model.addAttribute("scribble", scribble);
         return "post";
+    }
+
+    @GetMapping("/scribble")
+    public String getScribble(Scribble scribble) {
+        return "form";
     }
 
     @PostMapping("/scribble")
@@ -47,8 +47,15 @@ public class HomeController {
             return "form";
         } else {
             Scribble newScribble = scribbleService.addScribble(scribble);
-            redirectAttrs.addFlashAttribute("message", "Scribble created!");
+            redirectAttrs.addFlashAttribute("message", "Scribble created ✅!");
             return "redirect:/" + newScribble.getId();
         }
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deletePost(@PathVariable Long id, Model model, RedirectAttributes redirectAttrs) {
+        scribbleService.deletePost(id);
+        redirectAttrs.addFlashAttribute("message", "Scribble deleted 🗑️!");
+        return "redirect:/";
     }
 }
